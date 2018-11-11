@@ -51,5 +51,5 @@ production:
   encoding: unicode
   database: expense-manager_production
   pool: 5
-  username: expense-manager_production
-  password:
+  username: <%= ENV['DB_USERNAME_PRODUCTION'] %>
+  password: <%= ENV['DB_PASSWORD_PRODUCTION'] %>

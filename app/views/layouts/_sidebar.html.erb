@@ -1,1 +1,17 @@
-Dashboard
+<h2>Statistic</h2>
+<table class="table table-responsive">
+  <tr>
+    <td>Total Income</td>
+    <td><%= @income %></td>
+  </tr>
+
+  <tr>
+    <td>Total Outcome</td>
+    <td><%= @outcome %></td>
+  </tr>
+
+  <tr>
+    <td>Balance</td>
+    <td><%= @income - @outcome %></td>
+  </tr>
+</table>

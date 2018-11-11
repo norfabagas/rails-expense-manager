@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :outcomes
   resources :incomes
   resources :categories
   root "home#index"

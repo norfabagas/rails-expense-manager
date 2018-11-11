@@ -5,7 +5,7 @@ class IncomesController < ApplicationController
   # GET /incomes
   # GET /incomes.json
   def index
-    @incomes = Income.all.order("created_at DESC")
+    @incomes = current_user.incomes.all.order("created_at DESC")
   end
 
   # GET /incomes/1
@@ -15,7 +15,7 @@ class IncomesController < ApplicationController
 
   # GET /incomes/new
   def new
-    @income = Income.new
+    @income = current_user.incomes.new
   end
 
   # GET /incomes/1/edit
@@ -25,7 +25,7 @@ class IncomesController < ApplicationController
   # POST /incomes
   # POST /incomes.json
   def create
-    @income = Income.new(income_params)
+    @income = current_user.incomes.new(income_params)
 
     respond_to do |format|
       if @income.save
@@ -65,11 +65,11 @@ class IncomesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_income
-      @income = Income.find(params[:id])
+      @income = current_user.incomes.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def income_params
-      params.require(:income).permit(:total, :description)
+      params.require(:income).permit(:total, :description, :user_id)
     end
 end

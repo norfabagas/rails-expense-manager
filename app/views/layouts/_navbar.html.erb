@@ -5,17 +5,19 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <% if user_signed_in? %>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to 'Categories', categories_path, class: "nav-link"%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <%= link_to 'Income', incomes_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
+    <% end %>
 
     <ul class="navbar-nav nav mr-right">
       <li class="nav-link">

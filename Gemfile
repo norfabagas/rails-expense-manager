@@ -5,8 +5,10 @@ ruby '2.5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
+# Use postgresql as the database for Active Record
+gem 'pg'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+# gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -43,6 +45,8 @@ gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem 'better_errors', '~> 2.5'
 gem 'devise'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+gem 'chartkick', '~> 1.4', '>= 1.4.1'
+gem 'groupdate', '~> 4.1'
 
 group :development, :test do
   gem 'dotenv-rails'

@@ -12,14 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2018_11_11_163943) do
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
   end
 
-  create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "incomes", force: :cascade do |t|
     t.integer "total"
     t.text "description"
     t.datetime "created_at", null: false
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 2018_11_11_163943) do
     t.integer "user_id"
   end
 
-  create_table "outcomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "outcomes", force: :cascade do |t|
     t.integer "total"
     t.text "description"
     t.datetime "created_at", null: false
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 2018_11_11_163943) do
     t.integer "category_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

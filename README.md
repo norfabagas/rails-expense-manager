@@ -4,7 +4,7 @@ Expense Manager is a very simple app for managing expenses.
 
 Configurations:
 
-* Ruby version : 2.5.1
+* Ruby version : 2.5.0
 
 * Additional gems used in this repository
 1. gem 'bootstrap'
